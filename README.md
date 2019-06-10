@@ -1,6 +1,8 @@
 # ticat - cat with titles
 
-Command to show file contents, whilst adding titles.
+Command to show file contents, whilst adding titles. `cat` is all good and nice, but I spend time often re-editing listings to add titles, indents, etc when posting to lists.
+
+I thought this would be helpful with a small thing like that. Written in augmented bash for [Bash Builder](https://gitlab.com/taikedz/bash-builder)
 
 ```sh
 
@@ -25,25 +27,19 @@ ticat -p '> ' file1 file2
 ticat -i file1 file2
 ```
 
+Listing the build script for the project looks like this:
+
+```
+$ bin/ticat build.sh -i -A 2 -B 1
+
+build.sh
+
+
+    bbuild src/ticat.sh bin/ticat
+```
+
 Example use to generate nice listings for posting online:
 
 ```sh
 ticat -i -t '$ cat ' -B 1 -A 1 file1 file2 file3
-```
-
-Looks like
-
-```
-
-$ cat file1
-
-    Contents of file 1
-
-$ cat file2
-
-    Contents of file 2
-
-$ cat file3
-
-    Contents of file 3
 ```
